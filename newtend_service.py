@@ -1,13 +1,5 @@
 # -*- coding: utf-8 -*-
-'''
-    Test cases execution combinations
-    === Open EU ===
-    bin/op_tests -s openProcedure -A robot_tests_arguments/openeu_testing.txt -v broker:Newtend -v role:tender_owner -v api_version:2.4
-    bin/op_tests -s auction –A robot_tests_arguments/openeu_testing.txt -v broker:Newtend -v role:tender_owner –v api_version:2.4
-    bin/op_tests -s qualification –A robot_tests_arguments/openeu_testing.txt -v broker:Newtend -v role:tender_owner –v api_version:2.4
-    bin/op_tests –s contract_signing –A robot_tests_arguments/openeu_testing.txt -v broker:Newtend -v role:tender_owner –v api_version:2.4
 
-'''
 from datetime import datetime
 from pytz import timezone
 from iso8601 import parse_date
@@ -37,6 +29,11 @@ def get_time_with_offset(date):
 def convert_budget(budget):
     budget_convertion = format(budget, '.2f')
     return budget_convertion
+
+
+def convert_to_float(value):
+    converted_float = float(value)
+    return converted_float
 
 
 def substract(dividend, divisor):
